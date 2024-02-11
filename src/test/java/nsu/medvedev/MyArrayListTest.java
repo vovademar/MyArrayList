@@ -90,7 +90,7 @@ class MyArrayListTest {
     }
 
     @Test
-    public void testIncreaseCapacity() {
+    public void testIncreaseCapacityInAdd() {
         MyArrayList<Integer> list = new MyArrayList<>();
         list.add(1);
         list.add(2);
@@ -102,6 +102,24 @@ class MyArrayListTest {
         list.add(2);
         list.add(3);
         list.add(2);
+        list.add(3, 1);
+
+        assertEquals(11, list.size());
+    }
+
+    @Test
+    public void testIncreaseCapacityInIndexAdd() {
+        MyArrayList<Integer> list = new MyArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(2);
+        list.add(3);
+        list.add(1,2);
+        list.add(2,3);
+        list.add(3,2);
+        list.add(1,3);
+        list.add(1,2);
         list.add(3, 1);
 
         assertEquals(11, list.size());
